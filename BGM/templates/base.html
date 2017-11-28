@@ -112,8 +112,8 @@
   <div id="footer" style="text-align:center"> 
     <!-- Web minister login --> 
     {% if user.is_anonymous %}
-    Welcome Guest! <a href="{% url 'django.contrib.auth.views.login' %}"><img src="/static/images/loginkey.png" title="Admin Login" style="height: 18px;"></a> {% else %}
-    {{ user }} <a href="{% url 'django.contrib.auth.views.logout' %}">logout</a> {% endif %}
+    Welcome Guest! <a href="{% url 'login' %}"><img src="/static/images/loginkey.png" title="Admin Login" style="height: 18px;"></a> {% else %}
+    {{ user }} <a href="{% url 'logout' %}">logout</a> {% endif %}
     <p>Copyright <span class="glyphicon glyphicon-copyright-mark"></span> 
       <script type="text/javascript">var d = new Date()
 			document.write(d.getFullYear())

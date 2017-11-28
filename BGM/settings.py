@@ -24,7 +24,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Once logged in redirect to the home page
 LOGIN_REDIRECT_URL = '/'
@@ -48,6 +48,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 )
 
 ROOT_URLCONF = 'BGM.urls'
@@ -86,21 +87,59 @@ USE_TZ = True
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
+##### BEGIN ORIG ###
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+#STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+#STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+#STATICFILES_DIRS = (
+##    os.path.join(PROJECT_ROOT, 'static'),
+#    os.path.join(PROJECT_ROOT, 'staticfiles'),
+#)
+
+##### END ORIG ###
+
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.10/howto/static-files/
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+#STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
+    os.path.join(PROJECT_ROOT, 'staticfiles'),
 )
+
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
 
 
 #Template location
 
-TEMPLATE_DIRS = (
-#    os.path.join(os.path.dirname(BASE_DIR),"BGM","BGM", "templates"),
-    os.path.join(PROJECT_ROOT, 'templates'),
-                  )
+#TEMPLATE_DIRS = (
+#    os.path.join(PROJECT_ROOT, 'templates'),
+#                  )
 
+
+TEMPLATES = [
+{
+    'BACKEND': 'django.template.backends.django.DjangoTemplates',
+    'DIRS': [os.path.join(BASE_DIR, 'BGM', 'templates')],
+    'APP_DIRS': True,
+    'OPTIONS': {
+        'context_processors': [
+            'django.template.context_processors.debug',
+            'django.template.context_processors.request',
+            'django.contrib.auth.context_processors.auth',
+            'django.contrib.messages.context_processors.messages',
+
+        ],
+    },
+},] 

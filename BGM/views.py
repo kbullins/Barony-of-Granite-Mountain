@@ -1,9 +1,14 @@
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
-from django.template import RequestContext
+from django.template import RequestContext, loader
+
+#def index(request):
+    #return render_to_response('index.html', context_instance=RequestContext(request))
+#    return render(request, 'index.html', {})
 
 def index(request):
-	return render_to_response('index.html', context_instance=RequestContext(request))
+	return render(request, 'index.html')
+
 
 def home(request):
 	if request.user.is_authenticated():
