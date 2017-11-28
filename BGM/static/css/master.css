@@ -1,15 +1,4 @@
 @font-face{
-    font-family: "Ruritania";
-    src: url('/static/fonts/Ruritania.ttf');
-
-}
-
-@font-face{
-    font-family: "Ruritania-Outline";
-    src: url('/static/fonts/Ruritania-Outline.ttf');
-}
-
-@font-face{
     font-family: "KAISG";
     src: url('/static/fonts/KAISG.ttf');
 }

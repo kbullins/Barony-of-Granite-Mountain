@@ -1,0 +1,128 @@
+@font-face{
+    font-family: "KAISG";
+    src: url('/static/fonts/KAISG.ttf');
+}
+
+/* Button Style for Base Navbar */
+.navButton {
+	-moz-box-shadow:inset 0px 34px 0px -15px #222222;
+	-webkit-box-shadow:inset 0px 34px 0px -15px #222222;
+	box-shadow:inset 0px 34px 0px -15px #222222;
+	background-color:#222222;
+	border:1px solid #222222;
+	display:inline-block;
+	cursor:pointer;
+	color:#999999;
+	font-family:Arial;
+	font-size:18px;
+	font-weight:bold;
+	padding:12px 15px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #222222;
+    margin-top: -1px;
+    height: 50px;
+    width: 110px;
+    text-align: center;
+}
+.navButton:hover {
+	background-color:#222222;
+}
+.navButton:active {
+	position:relative;
+	top:1px;
+}
+
+/* Footer CSS */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    /* Footer Font */
+    font-family:Arial;
+	font-size:16px;
+
+
+    /* Set the fixed height of the footer here */
+    text-align: center;
+    background-color: #F5F0C8;
+    height: 40px;
+}
+	
+  /* Use before and after pseudo-elements in CSS to insert the email username and domain name on either side of the @ symbol */
+  email::after {
+    content: attr(data-domain);
+  }
+  email::before {
+    content: attr(data-user);
+  }
+  
+  .p{
+	  word-wrap: break-word;
+	}
+/* a link modifying undercolor */
+a.navbtn:link {
+	color:#B2B2B2; font-size:18px; text-decoration:none;
+	}
+	a.navbtn:visited {
+		color:#B2B2B2; font-size:18px; text-decoration:none
+	}
+	a.navbtn:hover{
+		color:#FFFFFF; font-size:18px;text-decoration:none
+	}
+	a.navbtn:active {
+		color:##B2B2B2; font-size:18px; text-decoration:none
+	}
+/* Navigation bar top */
+
+/* Social Media Sidebar*/
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+/* entypo */
+[class*="entypo-"]:before {
+   font-family: "entypo", sans-serif;
+}
+a.social { 
+   text-decoration: none;
+}
+ul.ulsocial {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+#sticky-social {
+   left: 0;
+   position: absolute;
+   top: 240px;
+}
+#sticky-social a {
+   background: #333;
+   color: #fff;
+   display: block;
+   height: 35px;
+   font: 16px "Open Sans", sans-serif;
+   line-height: 40px;
+   position: relative;
+   text-align: center;
+   width: 35px;
+   z-index:99
+}
+#sticky-social a span {
+   line-height: 35px;
+   left: -140px;
+   position: absolute;
+   text-align:center;
+   width:140px;
+}
+#sticky-social a:hover span {
+   left: 100%;
+}
+#sticky-social a[class*="facebook"],
+#sticky-social a[class*="facebook"]:hover,
+#sticky-social a[class*="facebook"] span { background: #3b5998; }
+
+#sticky-social a[class*="contactus"],
+#sticky-social a[class*="contactus"]:hover,
+#sticky-social a[class*="contactus"] span { background: #274527; }
+
+</style>
