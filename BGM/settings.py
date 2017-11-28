@@ -100,7 +100,7 @@ STATICFILES_DIRS = (
 #Template location
 
 TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(BASE_DIR),"BGM","BGM", "templates"),
+#    os.path.join(os.path.dirname(BASE_DIR),"BGM","BGM", "templates"),
+    os.path.join(PROJECT_ROOT, 'templates'),
                   )
-
 
