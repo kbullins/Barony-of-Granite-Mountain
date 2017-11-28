@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{% block title %}{% endblock %}</title>
+<!-- Display the Fav Icon -->
+<link rel="shortcut icon" type="image/png" href="/static/images/favicon.ico"/>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/master.css" media="screen" />
+<!-- Social Media Includes -->
+<link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=entypo">
+</head>
+
+<body style="background-color: #FCF7E3;">
+<nav class="navbar navbar-inverse" style="height: 145px; background-color: #284628; margin-bottom: 0px; border: 0px; border-radius: 0px;">
+  <div class="container-fluid"> 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header"><a href="/home"><img src="/static/images/BGMLogo-med.png" class="navbar-brand" alt="..." style="height: 295px; height: 220px; position: absolute; z-index: 100; top: -10px;"></a></div>
+    <div style="font-family: KAISG; font-size: 400%; white-space: nowrap; color: #D5B023; margin-top: 10px; margin-left: 135px; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000; " class="navbar-brand"> Barony of<br>
+      <div style="margin-top: 40px; font-size: 150%; margin-left: 70px;">Granite Mountain</div>
+  <!-- /.container-fluid --> 
+</nav>
+
+<!-- Social Media Links -->
+<aside id="sticky-social" style="z-index:99">
+  <ul class="ulsocial">
+    <li><a href="https://www.facebook.com/groups/297983596881451/" class="entypo-facebook social" target="_blank"><span style="white-space: nowrap">Facebook</span></a></li>
+    <li style="height: 1px"></li>
+    <li style="margin-top: 2px"><a href="#" class="entypo-contactus social" data-toggle="modal" data-target="#myModal"><div class="glyphicon glyphicon-envelope"></div><span style="white-space: nowrap">Contact Us</span></a></li>
+  </ul>
+</aside>
+<nav class="navbar navbar-inverse" style="border-radius: 0px; box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5); height: 55px">
+  <div style="margin-top: 13px; white-space: nowrap"> <a href="/home" class="navbtn" style="margin-left: 185px; border: 0px">Home</a> 
+      <div class="btn-group" style="margin-top: -4px;"> <a href="" class="navbtn dropdown-toggle" data-toggle="dropdown" style="margin-left: 20px; border: 0px">About Us <span class="caret"></span></a>
+      <ul class="dropdown-menu" style="margin-left: 20px">
+		<li><a href="/history">Who We Are</a></li>
+        <li><a href="/bgmcourt">Baronial Court</a></li>
+		<li><a href="/bgmchamp">Baronial Champions</a></li>
+      </ul>
+    </div>
+  <a href="/awards" class="navbtn" style="margin-left: 20px; border: 0px">Awards</a>
+  <a href="/officers" class="navbtn" style="margin-left: 20px; border: 0px">Officers</a>   
+  <a href="/calendar" class="navbtn" style="margin-left: 20px; border: 0px">Calendar</a> <a href="/newsletter" class="navbtn" style="margin-left: 20px; border: 0px">Newsletter</a>
+    <div class="btn-group" style="margin-top: -4px;"> <a href="" class="navbtn dropdown-toggle" data-toggle="dropdown" style="margin-left: 20px; border: 0px">Activities <span class="caret"></span></a>
+      <ul class="dropdown-menu" style="margin-left: 20px">
+		<li><a href="/archery">Archery</a></li>
+        <li><a href="/armouredcombat">Armoured Combat</a></li>
+		<li><a href="/artsciences">Arts & Sciences</a></li>
+		<li><a href="/meeting">Populace Meeting / Court Night</a></li>
+        <li><a href="/rapiercombat">Rapier Combat</a></li>
+        <li><a href="/scriptorium">Scriptorium</a></li>
+        <li><a href="/thrownweapons">Thrown Weapons</a></li>
+      </ul>
+    </div>
+    <a href="/links" class="navbtn" style="margin-left: 20px; border: 0px">Links</a>
+    </div>    
+</nav>
+
+
+{% if user.is_authenticated %}
+	<div class="text-center">
+            <table>
+            <tr><p>Admin Tools</p></tr>
+            <tr>
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default">Left</button>
+                    <button type="button" class="btn btn-default">Middle</button>
+                    <button type="button" class="btn btn-default">Edit Content</button>
+                </div>
+            </tr>
+            </table>
+		</div>
+	</div>
+{% else %}
+    
+{% endif %}
+<div class="container">
+  <table style="margin-top: 20px">
+    <thead>
+    </thead>
+    <tbody>
+      <!--Page Content-->
+    <td><div class="container"> 
+          <!-- Page Content using Django Templates --> 
+          {% block content %}
+          {% endblock %} </div></td>
+        </tbody>
+  </table>
+  
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="width: 780px;height: 850px;">
+      <div class="modal-body"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <iframe src="https://docs.google.com/forms/d/1cB15tEygzvO6YrUhIsu4ykaYL72Kgxr1RJJxmfSPtaA/viewform?embedded=true" width="750" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>  
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+  
+  
+</div>
+<div id="wrapper">
+  <div id="footer" style="text-align:center"> 
+    <!-- Web minister login --> 
+    {% if user.is_anonymous %}
+    Welcome Guest! <a href="{% url 'django.contrib.auth.views.login' %}"><img src="/static/images/loginkey.png" title="Admin Login" style="height: 18px;"></a> {% else %}
+    {{ user }} <a href="{% url 'django.contrib.auth.views.logout' %}">logout</a> {% endif %}
+    <p>Copyright <span class="glyphicon glyphicon-copyright-mark"></span> 
+      <script type="text/javascript">var d = new Date()
+			document.write(d.getFullYear())
+		</script> <i>Barony of Granite Mountain</i>, Webmaster Kristopher Bullins
+    
+    <div> </div>
+  </div>
+</div>
+</body>
